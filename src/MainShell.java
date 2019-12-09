@@ -37,26 +37,26 @@ public class MainShell {
 		PetriDish nextGenerationOfDish1 = new PetriDish(dish1.getDimX(), dish1.getDimY());
 
 		// Repeat, as long as the following generation is not equal to the
-		// preeceding generation.
-		int generation=0;
-		while (dish1.compareToSecondDish(nextGenerationOfDish1) != 0) {
-			
-			showContentsOfDish(dish1);
-			
-			nextGenerationOfDish1 = NextGeneration.generateFrom(dish1);
-			showContentsOfDish(nextGenerationOfDish1);
-			System.out.println("SUM: Born:"+nextGenerationOfDish1.getCellsBorn()+" Died:"+nextGenerationOfDish1.getCellsDied()+" Survived:"+nextGenerationOfDish1.getCellsSurvived());
-			generation++;
+				// preeceding generation.
+				int generation=0;
+				while (dish1.compareToSecondDish(nextGenerationOfDish1) != 0) {
+					
+					showContentsOfDish(dish1);
+					
+					nextGenerationOfDish1 = NextGeneration.generateFrom(dish1);
+					showContentsOfDish(nextGenerationOfDish1);
+					System.out.println("SUM: Born:"+nextGenerationOfDish1.getCellsBorn()+" Died:"+nextGenerationOfDish1.getCellsDied()+" Survived:"+nextGenerationOfDish1.getCellsSurvived());
+					generation++;
 
-			dish1.clear();
-			dish1 = NextGeneration.generateFrom(nextGenerationOfDish1);
-			generation++;
-			
-			System.out.println();
-			System.out.println("SUM: Born:"+dish1.getCellsBorn()+" Died:"+dish1.getCellsDied()+" Survived:"+dish1.getCellsSurvived());
-			
-		}
-		System.out.println("Petridish reached stable state after "+generation+" generations");
+					dish1.clear();
+					dish1 = NextGeneration.generateFrom(nextGenerationOfDish1);
+					generation++;
+					
+					System.out.println();
+					System.out.println("SUM: Born:"+dish1.getCellsBorn()+" Died:"+dish1.getCellsDied()+" Survived:"+dish1.getCellsSurvived());
+					
+				}
+				System.out.println("Petridish reached stable state after "+generation+" generations");
 	}
 
 	/*
